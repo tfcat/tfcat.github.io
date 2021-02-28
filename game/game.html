@@ -5,49 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LÖVE Game</title>
 	<style type="text/css">
-html, body
-{
-	background-color: #e0f4fc;
-	margin: 0;
-	height: 100%;
-	font-family: sans-serif;
-	font-size: 18px;
-}
-#wrapper
-{
-	margin: 0 0 -21px;
-	padding: 1px;
-	min-height: 100%;
-	border-bottom: 21px solid transparent;
-	box-sizing: border-box;
-}
-#main
-{
-	background-color: #b1e3fa;
-	margin: 9px;
-	padding: 15px 0;
-	border: 1px solid black;
-	border-radius: 10px;
-	box-shadow: 3px 3px 0 0 rgba(0,0,0,0.3);
-}
-#footer
-{
-	background-color: #b1e3fa;
-	padding-top: 3px;
-	height: 17px;
-	border-top: 1px dashed #77A;
-	color: #444;
-	font-size: 9pt;
-	text-align: center;
-	overflow-y: auto;
-}
-#footer a { color: #77A; }
-#footer a:hover, #footera:active { color: #ea316e; }
-@media (max-width: 850px)
-{
-	#wrapper { font-size: 80%; }
-	#title { padding: .2em; }
-}
+		html {
+			background-color: #222;
+			color: white;
+		}
 	</style>
 </head>
 <body>
@@ -55,8 +16,15 @@ html, body
 	<div id="main">
 		<center><canvas id="canvas" width="960" height="720" style="max-width:100%;background:#000;vertical-align:middle"></canvas></center>
 	</div>
+	<center>
+		<b>Controls:</b><br/>
+		WASD or arrow keys to move<br/>
+		Space or Up to jump<br/>
+		J to attack<br/>
+		Y to open debug menu (further controls are described in that menu)<br/>
+	</center>
 </div>
-<div id="footer">Made using the <a href="https://love2d.org/" target="_blank">LÖVE Framework</a> (<a href="https://bitbucket.org/rude/love/raw/default/license.txt" target="_blank">License</a>) &middot; Packaged using <a href="https://schellingb.github.io/LoveWebBuilder/" target="_blank">LÖVE Web Builder</a></div>
+
 <script type="text/javascript">(function(){
 var TXT =
 {
