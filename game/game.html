@@ -3,28 +3,36 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>LÖVE Game</title>
+	<title>Slashy Game</title>
 	<style type="text/css">
-		html {
-			background-color: #222;
-			color: white;
-		}
+    html {
+      background-color: #333;
+    }
+    #canvas {
+      width: 960px;
+      height: 720px;
+    }
 	</style>
 </head>
 <body>
 <div id="wrapper">
 	<div id="main">
 		<center><canvas id="canvas" width="960" height="720" style="max-width:100%;background:#000;vertical-align:middle"></canvas></center>
-	</div>
-	<center>
-		<b>Controls:</b><br/>
-		WASD or arrow keys to move<br/>
-		Space or Up to jump<br/>
-		J to attack<br/>
-		Y to open debug menu (further controls are described in that menu)<br/>
-	</center>
-</div>
 
+    <div style="margin-top: 20px; color: white">
+      <center>
+        <b>Controls:</b><br/>
+        WASD = Movement<br/>
+        SPACE = Jump<br/>
+        J = Attack<br/>
+        ENTER = Menu<br/>
+        Y = Debug menu (more options are shown on screen)<br/>
+        <p>Access cheats in the menu <b>(Enter)</b> or by pressing <b>"Y"</b></p>
+        <p>Sorry for the choppy text, Löve2D's web port is still a work in progress!</p>
+      </center>
+    </div>
+	</div>
+</div>
 <script type="text/javascript">(function(){
 var TXT =
 {
@@ -44,7 +52,7 @@ var Msg = function(m)
 };
 var Fail = function(m)
 {
-	canvas.outerHTML = '<div style="max-width:90%;width:'+canvas.clientWidth+'px;height:'+canvas.clientHeight+'px;background:#000;display:table-cell;vertical-align:middle"><div style="background-color:#FFF;color:#000;padding:1.5em;max-width:640px;width:80%;margin:auto;text-align:center">'+TXT.NOWEBGL+(m?'<br><br>'+m:'')+'</div></div>';
+	canvas.outerHTML = '<div style="background:#000;display:table-cell;vertical-align:middle"><div style="background-color:#FFF;color:#000;padding:1.5em;margin:auto;text-align:center">'+TXT.NOWEBGL+(m?'<br><br>'+m:'')+'</div></div>';
 };
 var DoExecute = function()
 {
@@ -65,7 +73,7 @@ var DoLoad = function()
 {
 	Msg(TXT.LOAD);
 	window.onerror = function(e,u,l) { Fail(e+'<br>('+u+':'+l+')'); };
-	Module = { TOTAL_MEMORY: 1024*1024*24, TOTAL_STACK: 1024*1024*2, currentScriptUrl: '-', preInit: DoExecute };
+	Module = { TOTAL_MEMORY: 1024*1024*100, TOTAL_STACK: 1024*1024*2, currentScriptUrl: '-', preInit: DoExecute };
 	var s = document.createElement('script'), d = document.documentElement;
 	s.src = 'game.js';
 	s.async = true;
